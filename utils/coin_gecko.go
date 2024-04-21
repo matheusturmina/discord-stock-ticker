@@ -13,7 +13,7 @@ import (
 )
 
 const (
-	GeckoURL = "https://pro-api.coingecko.com/api/v3/coins/%s?apikey=CG-4YHfYggRouFFQV3KpZG7wFQV"
+	GeckoURL = "https://api.coingecko.com/api/v3/coins/%s"
 )
 
 type CurrentPrice struct {
@@ -56,8 +56,8 @@ func GetCryptoPrice(ticker string) (GeckoPriceResults, error) {
 		return price, err
 	}
 
-	req.Header.Add("User-Agent", "Mozilla/5.0")
 	req.Header.Add("accept", "application/json")
+	req.Header.Add("x-cg-demo-api-key", "CG-4YHfYggRouFFQV3KpZG7wFQV\t")
 	client := &http.Client{}
 	resp, err := client.Do(req)
 	if err != nil {
