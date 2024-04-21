@@ -13,7 +13,7 @@ import (
 )
 
 const (
-	GeckoURL = "https://api.coingecko.com/api/v3/coins/%s"
+	GeckoURL = "https://pro-api.coingecko.com/api/v3/coins/%s?apikey=CG-4YHfYggRouFFQV3KpZG7wFQV"
 )
 
 type CurrentPrice struct {
